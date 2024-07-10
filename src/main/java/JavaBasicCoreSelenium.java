@@ -16,7 +16,7 @@ public class JavaBasicCoreSelenium {
         System.out.println("ini type data boolean : " + status);
 
         //pengertian syntax arrays
-        int[] arr = new int[5];//start indef from 0,1,2,3,4
+        int[] arr = new int[10];//start indef from 0,1,2,3,4
         arr[0] = 100;
         arr[1] = 120;
         arr[2] =  310;

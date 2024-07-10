@@ -1,7 +1,6 @@
 package exercise;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -11,7 +10,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.Arrays;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 public class Addmultiplemethod {
 
@@ -22,12 +20,14 @@ public class Addmultiplemethod {
         //System.setProperty("webdriver.chrome.driver", "D:\\dev-dwiki\\driver\\ChromeDriver\\chromedriver-win64\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
 
+
         //declare an object to input multipleSearching item
         String[] itemNeeded = {"Brocolli","Cucumber","Beetroot", "Beans", "Brinjal"};
 
         //implicit wait will targeting globally element
         //driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         //create an object to create global explicit wait
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         WebDriverWait explicitWait = new WebDriverWait(driver, Duration.ofSeconds(5));
         driver.manage().window().maximize();
         driver.get("https://rahulshettyacademy.com/seleniumPractise/");
@@ -60,7 +60,7 @@ public class Addmultiplemethod {
         for (int i=0; i <= product.size(); i++){
             //create an object to store everysingle getText on arraylist
             //need split the value of getText to get correct contains
-            String[] name = product.get(i).getText().split("-"); //name[0]-"Brocolli " -name[1]-" 1 Kg"
+            String[] name = product.get(i).getText().split("-"); //name[0]-"Brocolli " -name[1]-" 1 Kg"  Brocolli - 1 Kg
             //need delete all whitepspace on text can use trim method
             //also need store an new object
             String formattedName = name[0].trim();
@@ -77,6 +77,6 @@ public class Addmultiplemethod {
                     break;
                 }
             }
-        }
+        } //feature/
     }
 }
